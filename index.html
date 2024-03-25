@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Style CSS -->
+
+	<link rel="stylesheet" href="css/mainStyle.css">
+
+	<!-- Bootstrap CDN -->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+		integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+
+	<!-- Script for Charts -->
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+
+	<!-- Title -->
+
+	<title>Dashboard</title>
+
+</head>
+
+<body>
+
+	<div class="page-wrapper">
+
+		<nav class="sidebar">
+
+			<div class="brand-logo">
+				<a href="index.html" class="logo">
+					<img src="/assets/logo.png"
+						alt="Dashboards" />
+				</a>
+			</div>
+
+			<div class="sidebar-menu">
+				<div>
+					<ul>
+						<li class="sidebar-dropdown active">
+							<a href="#">
+								<i class="bi bi-house"></i>
+								<span class="menu-text">Dashboards</span>
+							</a>
+							<div class="sidebar-submenu">
+								<ul>
+									<li>
+										<a href="#" class="current-page">Analytics</a>
+									</li>
+									<li>
+										<a href="#">Reports</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="bi bi-handbag"></i>
+								<span class="menu-text">Product</span>
+							</a>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="bi bi-gem"></i>
+								<span class="menu-text">Widgets</span>
+							</a>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="bi bi-collection"></i>
+								<span class="menu-text">UI Elements</span>
+							</a>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="bi bi-stickies"></i>
+								<span class="menu-text">Pages</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="bi bi-calendar4"></i>
+								<span class="menu-text">Calendar</span>
+							</a>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="bi bi-columns-gap"></i>
+								<span class="menu-text">Forms</span>
+							</a>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="bi bi-window-split"></i>
+								<span class="menu-text">Tables</span>
+							</a>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="bi bi-pie-chart"></i>
+								<span class="menu-text">Graphs &amp; Maps</span>
+							</a>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="bi bi-layout-sidebar"></i>
+								<span class="menu-text">Layouts</span>
+							</a>
+						</li>
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="bi bi-x-diamond"></i>
+								<span class="menu-text">Authentication</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="bi bi-hand-index-thumb"></i>
+								<span class="menu-text">Link</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="main-container">
+			<div class="page-header">
+
+				<div class="sidebar-toggle" id="sidebar-toggle"><i class="bi bi-list"></i></div>
+				<ol class="breadcrumb d-md-flex d-none">
+					<li class="breadcrumb-item">
+						<i class="bi bi-house"></i>
+						<a href="#">Home</a>
+					</li>
+					<li class="breadcrumb-item breadcrumb-active" aria-current="page">Sales</li>
+				</ol>
+				<div class="header-area">
+					<div class="searchbar-area">
+
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search anything">
+							<i class="btn" type="button">
+								<i class="bi bi-search"> </i>
+							</i>
+						</div>
+
+					</div>
+					<a href="#" class="notification d-none d-xl-flex">
+						<div class="notification-details">You have <span class="count"> 21 </span> new leads </div>
+						<span class="notification-icon"><i
+								class="bi bi-bell-fill animate__animated animate__swing animate__infinite infinite"></i><b
+								class="dot animate__animated animate__heartBeat animate__infinite"></b></span>
+					</a>
+
+					<ul class="header-profile">
+
+						<li>
+							<a href="#">
+								<img src="/assets/flag.png" class="flag-img" alt="flag" />
+							</a>
+						</li>
+
+						<li>
+							<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown"
+								aria-haspopup="true">
+								<span class="user-name d-none d-md-block">Abigale</span>
+								<span class="avatar">
+									<img src="/assets/woman.png"
+										alt="Admin">
+									<span class="status online"></span>
+								</span>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="content-body">
+				<div class="content-wrapper">
+					<div class="row">
+						<div class="col-xxl-3 col-sm-6 col-12">
+							<div class="status-tile">
+								<div class="sale-icon shade-red">
+									<i class="bi bi-pie-chart"></i>
+								</div>
+								<div class="sale-details">
+									<h3 class="text-red">250k</h3>
+									<p>Sales</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xxl-3 col-sm-6 col-12">
+							<div class="status-tile">
+								<div class="sale-icon shade-blue">
+									<i class="bi bi-emoji-smile"></i>
+								</div>
+								<div class="sale-details">
+									<h3 class="text-blue">24m</h3>
+									<p>Customers</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xxl-3 col-sm-6 col-12">
+							<div class="status-tile">
+								<div class="sale-icon shade-yellow">
+									<i class="bi bi-box-seam"></i>
+								</div>
+								<div class="sale-details">
+									<h3 class="text-yellow">15k</h3>
+									<p>Products</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xxl-3 col-sm-6 col-12">
+							<div class="status-tile">
+								<div class="sale-icon shade-green">
+									<i class="bi bi-handbag"></i>
+								</div>
+								<div class="sale-details">
+									<h3 class="text-green">180m</h3>
+									<p>Revenue</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xxl-9  col-sm-12 col-12">
+
+							<div class="card">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-xxl-3 col-sm-4 col-12">
+											<div class="sale-reports-summary">
+												<div class="reports-summary-block">
+													<i class="bi bi-circle-fill text-primary me-2"></i>
+													<div class="d-flex flex-column">
+														<h6>Overall Sales</h6>
+														<h5>12 Millions</h5>
+													</div>
+												</div>
+												<div class="reports-summary-block">
+													<i class="bi bi-circle-fill text-success me-2"></i>
+													<div class="d-flex flex-column">
+														<h6>Overall Earnings</h6>
+														<h5>78 Millions</h5>
+													</div>
+												</div>
+												<div class="reports-summary-block">
+													<i class="bi bi-circle-fill text-danger me-2"></i>
+													<div class="d-flex flex-column">
+														<h6>Overall Revenue</h6>
+														<h5>60 Millions</h5>
+													</div>
+												</div>
+												<div class="reports-summary-block">
+													<i class="bi bi-circle-fill text-warning me-2"></i>
+													<div class="d-flex flex-column">
+														<h6>New Customers</h6>
+														<h5>23k</h5>
+													</div>
+												</div>
+												<button class="btn btn-info report-download">View Reports</button>
+											</div>
+										</div>
+
+										<div class="col-xxl-9 col-sm-8 col-12">
+											<div class="row">
+												<div class="col-12">
+													<div class="graph-day-selection mt-2" role="group">
+
+														<button type="button" class="btn active">Today</button>
+														<button type="button" class="btn">Yesterday</button>
+														<button type="button" class="btn">7 days</button>
+														<button type="button" class="btn">15 days</button>
+														<button type="button" class="btn">30 days</button>
+
+													</div>
+												</div>
+
+												<div class="col-12">
+													<div id="revenueGraph">
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+						<div class="col-xxl-3  col-sm-12 col-12">
+
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Sales</div>
+								</div>
+								<div class="card-body">
+									<div id="salesGraph" class="auto-align-graph"></div>
+									<div class="num-stats">
+										<h2>2100</h2>
+										<h6 class="text-truncate">12% higher than last month.</h6>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Orders</div>
+								</div>
+								<div class="card-body">
+
+									<div class="table-responsive">
+										<table class="table v-middle">
+											<thead>
+												<tr>
+													<th>Customer</th>
+													<th>Product</th>
+													<th>User ID</th>
+													<th>Ordered Placed</th>
+													<th>Amount</th>
+													<th>Payment Status</th>
+													<th>Order Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<div class="media-box">
+															<img src="/assets/man.png"
+																class="media-avatar" alt="Bootstrap Gallery">
+															<div class="media-box-body">
+																<div class="text-truncate">Ellie Collins</div>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="media-box">
+															<img src="/assets/food.png"
+																class="media-avatar" alt="Admin Themes">
+															<div class="media-box-body">
+																<div class="text-truncate">Ginger Snacks</div>
+															</div>
+														</div>
+													</td>
+													<td>Arise827</td>
+													<td>12/12/2021</td>
+													<td>$18.00</td>
+													<td>
+														<span class="text-green td-status"><i
+																class="bi bi-check-circle"></i> Paid</span>
+													</td>
+													<td>
+														<span class="badge shade-green min-90">Delivered</span>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="media-box">
+															<img src="/assets/woman.png"
+																class="media-avatar" alt="Bootstrap Gallery">
+															<div class="media-box-body">
+																<div class="text-truncate">Sophie Nguyen</div>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="media-box">
+															<img src="/assets/food1.png"
+																class="media-avatar" alt="Admin Themes">
+															<div class="media-box-body">
+																<div class="text-truncate">Guava Sorbet</div>
+															</div>
+														</div>
+													</td>
+													<td>Arise253</td>
+													<td>18/12/2021</td>
+													<td>$32.00</td>
+													<td>
+														<span class="text-red td-status"><i class="bi bi-x-circle"></i>
+															Failed</span>
+													</td>
+													<td>
+														<span class="badge shade-red min-90">Cancelled</span>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="media-box">
+															<img src="/assets/man.png"
+																class="media-avatar" alt="Bootstrap Gallery">
+															<div class="media-box-body">
+																<div class="text-truncate">Darcy Ryan</div>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="media-box">
+															<img src="/assets/food2.png"
+																class="media-avatar" alt="Admin Themes">
+															<div class="media-box-body">
+																<div class="text-truncate">Gooseberry Surprise</div>
+															</div>
+														</div>
+													</td>
+													<td>Arise878</td>
+													<td>22/12/2021</td>
+													<td>$19.00</td>
+													<td>
+														<span class="text-blue td-status"><i
+																class="bi bi-clock-history"></i> Awaiting</span>
+													</td>
+													<td>
+														<span class="badge shade-blue min-90">Processing</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Transactions</div>
+								</div>
+								<div class="card-body">
+									<div class="transactions">
+										<div class="transaction-block">
+											<div class="transaction-icon shade-blue">
+												<i class="bi bi-credit-card"></i>
+											</div>
+											<div class="transaction-details">
+												<h4>Visa Card</h4>
+												<p class="text-truncate">Laptop Ordered</p>
+											</div>
+											<div class="transaction-amount text-blue">$1590</div>
+										</div>
+										<div class="transaction-block">
+											<div class="transaction-icon shade-green">
+												<i class="bi bi-paypal"></i>
+											</div>
+											<div class="transaction-details">
+												<h4>Paypal</h4>
+												<p class="text-truncate">Payment Received</p>
+											</div>
+											<div class="transaction-amount text-green">$310</div>
+										</div>
+										<div class="transaction-block">
+											<div class="transaction-icon shade-blue">
+												<i class="bi bi-pin-map"></i>
+											</div>
+											<div class="transaction-details">
+												<h4>Travel</h4>
+												<p class="text-truncate">Yosemite Trip</p>
+											</div>
+											<div class="transaction-amount text-blue">$4900</div>
+										</div>
+										<div class="transaction-block">
+											<div class="transaction-icon shade-blue">
+												<i class="bi bi-pin-map"></i>
+											</div>
+											<div class="transaction-details">
+												<h4>Shopping</h4>
+												<p class="text-truncate">Bill Paid</p>
+											</div>
+											<div class="transaction-amount text-blue">$285</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Tasks</div>
+								</div>
+								<div class="card-body">
+									<div id="taskGraph"></div>
+									<ul class="task-list">
+										<li class="task-list-item">
+											<div class="task-icon shade-blue">
+												<i class="bi bi-clipboard-plus"></i>
+											</div>
+											<div class="task-info">
+												<h5 class="task-title">New</h5>
+												<p class="amount-spend">12</p>
+											</div>
+										</li>
+										<li class="task-list-item">
+											<div class="task-icon shade-green">
+												<i class="bi bi-clipboard-check"></i>
+											</div>
+											<div class="task-info">
+												<h5 class="task-title">Done</h5>
+												<p class="amount-spend">15</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Notifications</div>
+								</div>
+								<div class="card-body">
+									<ul class="notification-messages">
+										<li>
+											<div class="customer shade-blue">MK</div>
+											<div class="delivery-details">
+												<span class="badge shade-blue">Sales</span>
+												<h5>Marie Kieffer</h5>
+												<p>Thanks for choosing Apple product, further if you have any questions
+													please contact sales
+													team.</p>
+											</div>
+										</li>
+										<li>
+											<div class="customer shade-blue">ES</div>
+											<div class="delivery-details">
+												<span class="badge shade-blue">Marketing</span>
+												<h5>Ewelina Sikora</h5>
+												<p>Boost your sales by 50% with the easiest and proven marketing tool
+													for customer enggement
+													&amp; motivation.</p>
+											</div>
+										</li>
+										<li>
+											<div class="customer shade-blue">TN</div>
+											<div class="delivery-details">
+												<span class="badge shade-blue">Business</span>
+												<h5>Teboho Ncube</h5>
+												<p>Boost your sales by 50% with the easiest and proven marketing tool
+													for customer enggement
+													&amp; motivation.</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-title">Activity</div>
+								</div>
+								<div class="card-body">
+									<div class="activity-panel">
+										<div class="activity-block">
+											<div class="activity-user">
+												<img src="/assets/woman.png"
+													alt="Activity User">
+											</div>
+											<div class="activity-details">
+												<h4>Lilly Desmet</h4>
+												<h5>3 hours ago</h5>
+												<p>Sent invoice ref. #23457</p>
+												<span class="badge shade-green">Sent</span>
+											</div>
+										</div>
+										<div class="activity-block">
+											<div class="activity-user">
+												<img src="/assets/man.png"
+													alt="Activity User">
+											</div>
+											<div class="activity-details">
+												<h4>Jennifer Wilson</h4>
+												<h5>7 hours ago</h5>
+												<p>Paid invoice ref. #23459</p>
+												<span class="badge shade-red">Payments</span>
+											</div>
+										</div>
+										<div class="activity-block">
+											<div class="activity-user">
+												<img src="/assets/man1.png"
+													alt="Activity User">
+											</div>
+											<div class="activity-details">
+												<h4>Elliott Hermans</h4>
+												<h5>1 day ago</h5>
+												<p>Paid invoice ref. #23473</p>
+												<span class="badge shade-green">Sent</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	</div>
+	
+	<!-- JS Files -->
+	
+	<script src="/js/script.js"></script>
+	<script src="/js/chart.js"></script>
+
+</body>
+
+</html>
